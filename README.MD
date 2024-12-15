@@ -4,7 +4,7 @@ Instaling Jupyter is not required for VS Code use.
 
 ## The benefits of using notebooks as CLI wrappers:  
 \- Commands can be executed with one click  
-\- Frequently used commands are saved for later use
+\- Frequently used commands are saved for later use  
 \- No Terminal cluttering. Output for each command stays under its cell and gets updated on each run.  
 
 ---
