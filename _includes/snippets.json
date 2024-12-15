@@ -1,0 +1,12 @@
+{
+	"Shell Command": {
+    "prefix": "c",
+    "body": [
+        "cmd = f\"\"\"",
+        "    $0",
+        "\"\"\"",
+		"sh(${1|bash_host,docker_host,ansible_host|}, cmd)"
+    ],
+    "description": "Insert shell command block"
+	}
+}
