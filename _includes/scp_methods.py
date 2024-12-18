@@ -1,4 +1,5 @@
 import subprocess
+from _includes.ssh_methods import confirm
 
 # ----------------------- #
 
@@ -33,13 +34,13 @@ def _file_transfer(host, mode, local_path, remote_path):
 # ----------------------- #
 
 def fput(host, local_path, remote_path='.'):
-    return _file_transfer(host, 'file_to_remote', local_path, remote_path)
+    if confirm(): _file_transfer(host, 'file_to_remote', local_path, remote_path)
 
 def fget(host, remote_path, local_path='.'):
-    return _file_transfer(host, 'file_from_remote', local_path, remote_path)
+    _file_transfer(host, 'file_from_remote', local_path, remote_path)
 
 def dput(host, local_path, remote_path='.'):
-    return _file_transfer(host, 'dir_to_remote', local_path, remote_path)
+    if confirm(): _file_transfer(host, 'dir_to_remote', local_path, remote_path)
 
 def dget(host, remote_path, local_path='.'):
-    return _file_transfer(host, 'dir_from_remote', local_path, remote_path)
+    _file_transfer(host, 'dir_from_remote', local_path, remote_path)
