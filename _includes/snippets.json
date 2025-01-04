@@ -1,12 +1,21 @@
 {
 	"Shell Command": {
-    "prefix": "c",
+    "prefix": "cc",
     "body": [
-        "cmd = f\"\"\"",
-        "    $0",
-        "\"\"\"",
+		"cmd = f'''",
+		"    $0",
+		"'''",
 		"sh(${1|bash_host,docker_host,ansible_host|}, cmd)"
     ],
     "description": "Insert shell command block"
-	}
+	},
+
+	"Shell Command_Short": {
+		"prefix": "cs",
+		"body": [
+			"cmd = f'$0'",
+			"sh(${1|bash_host,docker_host,ansible_host|}, cmd)"
+		],
+		"description": "Insert shell command block"
+		}
 }

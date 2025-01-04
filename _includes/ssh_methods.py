@@ -45,6 +45,6 @@ def sush(host, command):
 # ----------------------- #
 
 def ssh(host):
-    args = [f'{host["user"]}@{host["ip"]}', '-i', f'"{host["key_file"]}"', '-p', host["port"]]
+    args = [f'{host["user"]}@{host["ip"]}', '-i', host["key_file"], '-p', host["port"]]
     subprocess.Popen(['ssh'] + args, creationflags=subprocess.CREATE_NEW_CONSOLE)
     print("ssh " + " ".join(args))
